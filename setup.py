@@ -1,11 +1,11 @@
 # -*- coding:utf-8 -*-
 from setuptools import setup
 
-version = '0.0.1'
+version = '0.0.2'
 name = 'bucho'
-short_description = '`practice_bucho` is a package for exercises.'
+short_description = '`bucho` is a package for exercises.'
 long_description = """\
-`practice_bucho` is a package for exercises.
+`bucho` is a package for exercises.
 
 Requirements
 ------------
@@ -26,6 +26,11 @@ Setup
 
 History
 -------
+
+0.0.2 (2010-07-10)
+~~~~~~~~~~~~~~~~~~
+
+- you can import bucho
 
 0.0.1 (2010-07-10)
 ~~~~~~~~~~~~~~~~~~
@@ -49,6 +54,7 @@ setup(
     keywords=['practice',],
     author='AE35',
     author_email='alpha.echo.35@gmail.com',
+    url='http://bitbucket.org/ae35/bucho/',
     license='PSL',
     )
 
