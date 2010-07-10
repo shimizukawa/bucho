@@ -1,21 +1,11 @@
 # -*- coding:utf-8 -*-
 from setuptools import setup
 
-version = '0.0.3'
+version = '0.0.4'
 name = 'bucho'
 short_description = '`bucho` is a package for exercises.'
 long_description = """\
-`bucho` is a package for exercises.
-
-Requirements
-------------
-
-- Python 2.7 (not support 3.x)
-
-Features
---------
-
-- nothing
+`bucho` is a package for exercises. Yes, we love bucho!
 
 Setup
 -----
@@ -26,6 +16,12 @@ Setup
 
 History
 -------
+
+0.0.4 (2010-07-10)
+~~~~~~~~~~~~~~~~~~
+
+- add latest_status, all_status
+- add torumemo
 
 0.0.3 (2010-07-10)
 ~~~~~~~~~~~~~~~~~~
