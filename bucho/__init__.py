@@ -138,3 +138,7 @@ def show():
                                                                                     #### 
     """
     print(_text)
+
+def torumemo():
+    import webbrowser
+    webbrowser.open("http://oldriver.org/torumemo/")
