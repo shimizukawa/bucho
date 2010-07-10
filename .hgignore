@@ -1,0 +1,7 @@
+^MANIFEST$
+^(build|dist|bucho\.egg-info)/
+\.py[co]$
+\.DS_Store$
+^env$
+
+
