@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 from setuptools import setup
 
-version = '0.0.2'
+version = '0.0.3'
 name = 'bucho'
 short_description = '`bucho` is a package for exercises.'
 long_description = """\
@@ -26,6 +26,11 @@ Setup
 
 History
 -------
+
+0.0.3 (2010-07-10)
+~~~~~~~~~~~~~~~~~~
+
+- bucho can show !
 
 0.0.2 (2010-07-10)
 ~~~~~~~~~~~~~~~~~~
