@@ -1,7 +1,11 @@
-^MANIFEST$
+^build$
+^build/
+^build/*
+^build/*/*
+^docs/_build
 ^(build|dist|bucho\.egg-info)/
 \.py[co]$
-\.DS_Store$
-^env$
+\.so$
+^env/
 
 
