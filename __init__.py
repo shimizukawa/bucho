@@ -1,3 +1,9 @@
+# encoding: utf-8
+
+import json
+import urllib
+
+
 def show():
     _text="""
                                   #############                     ######## 
@@ -138,3 +144,15 @@ def show():
                                                                                     #### 
     """
     print(_text)
+
+
+def latest_status():
+    url = urllib.urlopen('http://twitter.com/statuses/user_timeline/torufurukawa.json')
+    tof = json.loads(url.read())
+    print(tof[0]['text'])
+
+def all_status():
+    url = urllib.urlopen('http://twitter.com/statuses/user_timeline/torufurukawa.json')
+    tof = json.loads(url.read())
+    for t in tof:
+        print(t['text'])
