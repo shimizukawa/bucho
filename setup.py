@@ -59,6 +59,7 @@ setup(
     keywords=['practice',],
     author='AE35',
     author_email='alpha.echo.35@gmail.com',
+    packages = ['bucho'],
     url='http://bitbucket.org/ae35/bucho/',
     license='PSL',
     )
