@@ -167,3 +167,9 @@ def torumemo():
     """
     import webbrowser
     webbrowser.open("http://oldriver.org/torumemo/")
+
+def hide():
+    """ bucho...
+    """
+    import webbrowser
+    webbrowser.open('http://gyazo.com/e897ffb29f46e7ebb218847951c71714.png')
