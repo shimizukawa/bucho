@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 from setuptools import setup
 
-version = '0.0.4'
+version = '0.0.5'
 name = 'bucho'
 short_description = '`bucho` is a package for exercises.'
 long_description = """\
@@ -16,6 +16,12 @@ Setup
 
 History
 -------
+
+0.0.5 (unreleased)
+~~~~~~~~~~~~~~~~~~
+
+- add `bucho` console script.
+
 
 0.0.4 (2010-07-10)
 ~~~~~~~~~~~~~~~~~~
@@ -58,5 +64,10 @@ setup(
     packages = ['bucho'],
     url='http://bitbucket.org/ae35/bucho/',
     license='PSL',
+    entry_points = {
+        'console_scripts': [
+            'bucho=bucho.command:main',
+        ],
+    },
     )
 
