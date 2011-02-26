@@ -68,10 +68,7 @@ for name in ['show', 'latest_status', 'all_status', 'torumemo']:
     setattr(BuchoCmd, "do_" + name, makecmd(name))
 
 
-def main(args=None, options=None, cmdclass=BuchoCmd):
-    if args is None:
-        args = sys.argv[1:]
-
+def main(options=None, cmdclass=BuchoCmd):
     try:
         if options is None:
             options = BuchoOptions()
@@ -89,6 +86,9 @@ def main(args=None, options=None, cmdclass=BuchoCmd):
         except ImportError:
             pass
         c.cmdloop()
+
+def console():
+    main()
 
 if __name__ == '__main__':
     main()

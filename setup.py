@@ -70,7 +70,7 @@ setup(
     license='PSL',
     entry_points = {
         'console_scripts': [
-            'bucho=bucho.command:main',
+            'bucho=bucho.command:console',
         ],
         'paste.app_factory': [
             'main=bucho.wsgi:app_factory',
