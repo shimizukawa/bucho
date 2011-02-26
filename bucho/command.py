@@ -62,7 +62,7 @@ class BuchoCmd(cmd.Cmd):
 for name in ['show', 'latest_status', 'all_status', 'torumemo']:
     def makecmd(n):
         def f(self, arg):
-            getattr(bucho, n)()
+            print(getattr(bucho, n)())
             return 0
         return f
     setattr(BuchoCmd, "do_" + name, makecmd(name))

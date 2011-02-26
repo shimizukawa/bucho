@@ -144,7 +144,7 @@ def show():
                                                                                     #### 
                                                                                     #### 
     """
-    print(_text)
+    return _text
 
 
 def latest_status():
@@ -152,7 +152,7 @@ def latest_status():
     """
     url = urllib.urlopen('http://twitter.com/statuses/user_timeline/torufurukawa.json')
     tof = json.loads(url.read())
-    print(tof[0]['text'])
+    return tof[0]['text']
 
 def all_status():
     """Print all bucho's tweet.
@@ -160,7 +160,7 @@ def all_status():
     url = urllib.urlopen('http://twitter.com/statuses/user_timeline/torufurukawa.json')
     tof = json.loads(url.read())
     for t in tof:
-        print(t['text'])
+        return t['text']
 
 def torumemo():
     """Open torumemo with webbrowser.
