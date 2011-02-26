@@ -21,6 +21,8 @@ History
 ~~~~~~~~~~~~~~~~~~
 
 - add `bucho` console script.
+- some functions show(),latest_status(),all_status() stop print text and
+  now return text. this is incompatible change.
 
 
 0.0.4 (2010-07-10)
