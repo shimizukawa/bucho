@@ -2,6 +2,8 @@
 import json
 import urllib
 
+# these methods are exposed to Internet by wsgi.py
+__all__ = ['show', 'latest_status', 'all_status', 'torumemo']
 
 def show():
     """Say show :-)

@@ -21,6 +21,8 @@ History
 ~~~~~~~~~~~~~~~~~~
 
 - add `bucho` console script.
+- add `bucho.wsgi.wsgi_app` wsgi application.
+- add `main` entry point for paste.app_factory.
 - some functions show(),latest_status(),all_status() stop print text and
   now return text. this is incompatible change.
 
@@ -69,6 +71,9 @@ setup(
     entry_points = {
         'console_scripts': [
             'bucho=bucho.command:main',
+        ],
+        'paste.app_factory': [
+            'main=bucho.wsgi:app_factory',
         ],
     },
     )
