@@ -1,9 +1,0 @@
-^build$
-^build/
-^build/*
-^build/*/*
-^docs/_build
-^(build|dist|bucho\.egg-info)/
-\.py[co]$
-\.so$
-^env/

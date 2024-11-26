@@ -1,62 +1,53 @@
 # -*- coding:utf-8 -*-
-from setuptools import setup
 
-version = '0.0.5'
+try:
+    import setuptools
+except ImportError:
+    import distribute_setup
+    distribute_setup.use_setuptools()
+
+import os
+import sys
+
+here = os.path.dirname(__file__)
+def _read(name):
+    try:
+        f = open(os.path.join(here, name))
+        return f.read()
+    except:
+        return ""
+
+version = '0.1.2'
 name = 'bucho'
 short_description = '`bucho` is a package for exercises.'
-long_description = """\
-`bucho` is a package for exercises. Yes, we love bucho!
+readme = _read('README.txt')
+history = _read('HISTORY.txt')
 
-Setup
------
-
-::
-
-  $ easy_install bucho
-
-History
--------
-
-0.0.5 (unreleased)
-~~~~~~~~~~~~~~~~~~
-
-- add `bucho` console script.
-- add `bucho.wsgi.wsgi_app` wsgi application.
-- add `main` entry point for paste.app_factory.
-- some functions show(),latest_status(),all_status() stop print text and
-  now return text. this is incompatible change.
-
-
-0.0.4 (2010-07-10)
-~~~~~~~~~~~~~~~~~~
-
-- add latest_status, all_status
-- add torumemo
-
-0.0.3 (2010-07-10)
-~~~~~~~~~~~~~~~~~~
-
-- bucho can show !
-
-0.0.2 (2010-07-10)
-~~~~~~~~~~~~~~~~~~
-
-- you can import bucho
-
-0.0.1 (2010-07-10)
-~~~~~~~~~~~~~~~~~~
-
-- first release
-"""
+long_description = readme + "\n" + history
 
 classifiers = [
-    'Development Status :: 1 - Planning',
+    'Development Status :: 2 - Pre-Alpha',
     'License :: OSI Approved :: Python Software Foundation License',
     'Programming Language :: Python',
+    'Programming Language :: Python :: 2',
+    'Programming Language :: Python :: 2.6',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.2',
     'Topic :: Utilities',
     ]
 
-setup(
+extra = {}
+
+if sys.version_info >= (3, 0):
+    if not getattr(setuptools, '_distribute', False):
+        raise RuntimeError(
+                'You must installed `distribute` to setup bucho with Python3')
+    extra.update(
+        use_2to3=True
+    )
+
+setuptools.setup(
     name=name,
     version=version,
     description=short_description,
@@ -75,6 +66,11 @@ setup(
         'paste.app_factory': [
             'main=bucho.wsgi:app_factory',
         ],
+        'bucho.commands': [
+            'sample=bucho.plugins:sample',
+        ],
     },
+    test_suite="bucho",
+    **extra
     )
 
