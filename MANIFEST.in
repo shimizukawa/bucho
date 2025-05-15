@@ -1,1 +1,2 @@
-include HISTORY.txt
+include *.md
+include tests.py

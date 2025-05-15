@@ -1,4 +1,3 @@
 def sample():
-    """ sample plugin command
-    """
+    """sample plugin command"""
     return "sample"

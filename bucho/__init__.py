@@ -1,12 +1,12 @@
-# encoding: utf-8
 import json
-import urllib
-from bucho.compat import text_
+import urllib.request
+import urllib.parse
+import urllib.error
 
 # these methods are exposed to Internet by wsgi.py
-__all__ = ['show', 'latest_status', 'all_status', 'torumemo']
+__all__ = ["show", "latest_status", "all_status", "torumemo"]
 
-_text="""
+_text = """
                                   #############                     ######## 
                                   #############                  ############## 
                                   #############                ################## 
@@ -145,38 +145,43 @@ _text="""
                                                                                     #### 
     """
 
+
 def show():
-    """Say show :-)
-    """
+    """Say show :-)"""
     return _text
 
+
 def show_gui():
-    from bucho.compat import enable_gui
-    if enable_gui:
+    try:
         from bucho.gui import BuchoFrame
+
         frame = BuchoFrame(_text)
         frame.run()
-    else:
-        print_("Sorry, bucho is busy.")
+    except Exception:
+        print("Sorry, bucho is busy.")
 
 
 def latest_status():
-    """Print latest bucho's tweet.
-    """
-    url = urllib.urlopen('http://twitter.com/statuses/user_timeline/torufurukawa.json')
-    tof = json.loads(url.read().decode('ascii'))
-    return tof[0]['text']
+    """Print latest bucho's tweet."""
+    url = urllib.request.urlopen(
+        "http://twitter.com/statuses/user_timeline/torufurukawa.json"
+    )
+    tof = json.loads(url.read().decode("utf-8"))
+    return tof[0]["text"]
+
 
 def all_status():
-    """Print all bucho's tweet.
-    """
-    url = urllib.urlopen('http://twitter.com/statuses/user_timeline/torufurukawa.json')
-    tof = json.loads(url.read().decode('ascii'))
-    return text_('\n').join(t['text'] for t in tof)
+    """Print all bucho's tweet."""
+    url = urllib.request.urlopen(
+        "http://twitter.com/statuses/user_timeline/torufurukawa.json"
+    )
+    tof = json.loads(url.read().decode("utf-8"))
+    return "\n".join(t["text"] for t in tof)
+
 
 def torumemo():
-    """Open torumemo with webbrowser.
-    """
+    """Open torumemo with webbrowser."""
     import webbrowser
+
     webbrowser.open("http://oldriver.org/torumemo/")
-    return text_('OK')
+    return "OK"
